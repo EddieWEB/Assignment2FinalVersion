@@ -4,29 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Assignment2FinalVersion</title>
+    <!-- ==============CSS=================== -->
     <link rel="stylesheet" href="./css/main.css">
+    <!-- ==============JS=================== -->
     <script src="./main.js" defer></script>
 </head>
 <body>
+    <header>
+        <h1 class="header-text">My Budget</h1>
+    </header>
 
-    <form id="add-transaction">
-        <label>Name: <input id="transaction-name" type="text"></label>
-        <label>Price: <input id="transaction-price" type="number" step="0.01"></label>
-        <button type="submit">Add Transaction</button>
-    </form>
+    <main class="main-container">
+        <section class="formSection-container"></section>
+            <!-- Form with text input, number input and submit button -->
+            <form id="add-transaction">
+                <label>Name: <input id="transaction-name" type="text"></label>
+                <label>Price: <input id="transaction-price" type="number" step="0.01"></label>
+                <select id="select-list">
+                    <option value="income">+</option>
+                    <option value="expense">-</option>
+                </select>
+                <button type="submit">Add Transaction</button>
+            </form>
+        </section>
 
-    <ul id="income-list">
-        <!-- Budget transactions  -->
-    </ul>
+        <section class="listSection-container">
+            <ul id="income-list">
+                <!-- Income transactions  -->
+            </ul>
 
-    <ul id="expense-list">
-        <!-- Budget transactions  -->
-    </ul>
-
-    <div id="budget-total">
-        <!-- Budget total -->
-    </div>
-    
+            <ul id="expense-list">
+                <!-- Expense transactions  -->
+            </ul>
+        </section>
+        
+        <section class="totalSection-container">
+            <div id="budget-total">
+                <!-- Budget total -->
+            </div>
+        </section> 
+    </main>
 </body>
 </html>

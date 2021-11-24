@@ -6,6 +6,7 @@ const budgetTotal = document.querySelector("#budget-total")
 const addTransactionForm = document.querySelector("#add-transaction")
 const transactionName = document.querySelector("#transaction-name")
 const transactionPrice = document.querySelector("#transaction-price")
+const select = document.querySelector("#select-list")
 // --------------------------------------------------------------------
 // BUDGET ARRAY
 const budget = []
@@ -32,12 +33,16 @@ function showTransaction() {
     
     for (let i=0; i < budget.length; i+=1) {
         const {name, price} = budget[i]
-        if(price > 0){
+        console.log(select.value)
+        if(select.value == "income"){
         incomeStr += `<li>${name} ${price} kr</li>`
-        } else {
+        } else if(select.value == "expense"){
             expenseStr += `<li>${name} ${price} kr</li>`
         }
     }
+
+    
+
     incomeList.innerHTML = incomeStr
     expenseList.innerHTML = expenseStr
     budgetTotal.innerHTML = `Budget total: ${getTotal()} kr`
