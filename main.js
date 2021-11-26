@@ -15,7 +15,13 @@ const budget = []
 addTransactionForm.onsubmit = function(e) {
     e.preventDefault()
     const name = transactionName.value
-    const price = transactionPrice.value
+    let price = 0
+    
+    if(select.value == "income"){
+        price = transactionPrice.value
+        } else if(select.value == "expense"){
+            price = transactionPrice.value*-1
+            }
     addTransaction(name, price)
 }
 // --------------------------------------------------------------------
@@ -34,15 +40,12 @@ function showTransaction() {
     for (let i=0; i < budget.length; i+=1) {
         const {name, price} = budget[i]
         console.log(select.value)
-        if(select.value == "income"){
+        if(price > 0){
         incomeStr += `<li>${name} ${price} kr</li>`
-        } else if(select.value == "expense"){
+        } else if(price < 0){
             expenseStr += `<li>${name} ${price} kr</li>`
         }
     }
-
-    
-
     incomeList.innerHTML = incomeStr
     expenseList.innerHTML = expenseStr
     budgetTotal.innerHTML = `Budget total: ${getTotal()} kr`

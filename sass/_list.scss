@@ -1,0 +1,27 @@
+.listSection-container {
+    background-color: whitesmoke;
+    display: flex;
+    margin:auto;
+    width: 90vw;
+}
+
+#income-list {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background-color: $incomeColor;
+    align-items: center;
+}
+
+#expense-list {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background-color: $expenseColor;
+    align-items: center;
+}
+
+li {
+    list-style: none;
+    margin-top: 0.5vh;
+}

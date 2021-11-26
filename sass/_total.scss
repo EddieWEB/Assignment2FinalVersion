@@ -1,0 +1,12 @@
+.totalSection-container {
+    background-color: $totalColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    margin-top: 3vh;
+}
+
+#budget-total {
+    font-size: 1.2rem;
+}
